@@ -10,8 +10,8 @@ ZIP_NAME="inference_artifacts.zip"
 conda create -n 4dmr python=3.9 -y
 conda activate 4dmr
 
-git clone "$REPO_URL"
-cd 4DMR-AU-Prediction
+# git clone "$REPO_URL"
+cd kaggle-4dme-challenge
 
 # ---------- deps ----------
 pip install -r requirements.txt
