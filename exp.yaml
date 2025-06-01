@@ -1,19 +1,19 @@
 prep_faces:
-  input : inference_artifacts/dataset/original_image
-  output: inference_artifacts/dataset/lr_image
+  input : data/inference_artifacts/dataset/original_image
+  output: data/inference_artifacts/dataset/lr_image
   target_size: [1024, 1024]
 
 extract_2d:
-  dataset_root : inference_artifacts/dataset/lr_image
-  features_root: inference_artifacts/dataset/feat2d
+  dataset_root : data/inference_artifacts/dataset/lr_image
+  features_root: data/inference_artifacts/dataset/feat2d
   model_version: radio_v2.5-g
   model_cache  : vision_foundation_models
   device       : cuda
 
 run_full:
-  feat2d     : inference_artifacts/dataset/feat2d
-  feat3d     : inference_artifacts/dataset/feat3d
-  model      : inference_artifacts/checkpoint/best_scripted.pt
+  feat2d     : data/inference_artifacts/dataset/feat2d
+  feat3d     : data/inference_artifacts/dataset/feat3d
+  model      : data/inference_artifacts/checkpoint/best_scripted.pt
   out        : submission.csv
   thresholds : [0.6, 0.08, 0.08, 0.53, 0.33]
   no_fix     : false
